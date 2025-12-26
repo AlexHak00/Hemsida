@@ -1,0 +1,2 @@
+# Hemsida
+Värderingsmodell 
