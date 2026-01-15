@@ -35,9 +35,14 @@ col1, col2 = st.columns(2)
 with col1: 
     eps = st.number_input("Nuvarande EPS: (exempelvis 5.0)", min_value=0, value=0, max_value=500)
 with col2: 
-    growth = st.selectbox("Vinsttillväxt (%)", [5, 6 , 8, 10, 12, 15, 18, 20])
+    growth = st.selectbox("Vinsttillväxt ett år framåt (%)", [5, 6 , 8, 10, 12, 15, 18, 20])
 required_return = st.selectbox("Avkastningskrav (%)", [5, 6, 8, 10, 12, 15, 18, 20])
 margin_of_safety = st.selectbox("Säkerhetsmarginal", [0.20, 0.25, 0.30, 0.35, 0.40])
+stockprice = st.number_input("Vad är aktiekursen idag?", min_value=0, value=0, max_value=5000)
+
+forward_eps = eps * (1 + growth /100 )
+
+forward_PE = stockprice / forward_eps
 
 st.divider()
 
@@ -52,6 +57,7 @@ else:
     st.success(f"Motiverat P/E: {pe}")
     st.success(f"Motiverat aktiepris: {intrinsic_value:.2f}")
     st.success(f"Köp med Säkerhetsmarginal [{margin_of_safety * 100}%]: {buy_price:.2f}")
+    st.success(f'ForwardPE är {forward_PE:.2f}')
 
 interval = valuation_interval(
     eps,
@@ -82,4 +88,6 @@ else:
 
 
 ## lägga in så man kan välja ticker 
+
+
 
