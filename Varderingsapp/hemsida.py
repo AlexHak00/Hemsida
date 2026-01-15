@@ -38,7 +38,7 @@ with col2:
     growth = st.selectbox("Vinsttillväxt ett år framåt (%)", [5, 6 , 8, 10, 12, 15, 18, 20])
 required_return = st.selectbox("Avkastningskrav (%)", [5, 6, 8, 10, 12, 15, 18, 20])
 margin_of_safety = st.selectbox("Säkerhetsmarginal", [0.20, 0.25, 0.30, 0.35, 0.40])
-stockprice = st.number_input("Vad är aktiekursen idag?", min_value=0, value=0, max_value=5000)
+stockprice = st.number_input("Vad är aktiekursen idag?", min_value=1, value=0, max_value=5000)
 
 forward_eps = eps * (1 + growth /100 )
 
@@ -88,6 +88,7 @@ else:
 
 
 ## lägga in så man kan välja ticker 
+
 
 
 
