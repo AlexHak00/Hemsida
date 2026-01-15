@@ -33,7 +33,7 @@ with st.container():
 col1, col2 = st.columns(2)
 
 with col1: 
-    eps = st.number_input("Nuvarande EPS: (exempelvis 5.0)", min_value=0, value=0, max_value=500)
+    eps = st.number_input("Nuvarande EPS: (exempelvis 5.0)", min_value=1, value=1, max_value=500)
 with col2: 
     growth = st.selectbox("Vinsttillväxt ett år framåt (%)", [5, 6 , 8, 10, 12, 15, 18, 20])
 required_return = st.selectbox("Avkastningskrav (%)", [5, 6, 8, 10, 12, 15, 18, 20])
@@ -88,6 +88,7 @@ else:
 
 
 ## lägga in så man kan välja ticker 
+
 
 
 
